@@ -12,7 +12,6 @@ const config = {
         filename: '[name].js',
         chunkFilename: 'chunk.[contentHash].[ext]',
         clean: true,
-        publicPath: path.resolve('dist'),
     },
     devtool: 'source-map',
     devServer: {
@@ -37,6 +36,18 @@ const config = {
                 test: /.css$/,
                 use: ['style-loader', 'css-loader'],
             },
+            {
+                test: /\.(png|jpe?g|gif|svg)$/i,
+                use: [
+                  {
+                    loader: 'url-loader',
+                    options: {
+                      limit: 8192,
+                      name: 'assets/images/[name].[hash].[ext]',
+                    },
+                  },
+                ],
+              },
         ],
     },
     resolve: {

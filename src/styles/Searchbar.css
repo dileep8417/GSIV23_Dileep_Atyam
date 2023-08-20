@@ -1,22 +1,38 @@
 .search-field {
     position: relative;
     width: 100%;
-    max-width: 380px;
+    max-width: 520px;
 }
 
 .search-field input {
     border: none;
     border-radius: 6px;
-    padding: 8px 8px 8px 36px;
+    padding: 12px 12px 12px 38px;
     width: 100%;
     background-color: var(--disabled);
     outline: none;
+    font-size: 16px;
 }
 
 .search-field .search-icon {
     position: absolute;
-    font-size: 21px;
+    font-size: 24px;
     left: 8px;
-    top: 6px;
+    top: 9px;
     color: var(--light-gray);
+    cursor: pointer;
+}
+
+.search-info-container {
+    margin: 24px auto;
+    font-size: 18px;
+}
+
+.search-info-container span {
+    color: var(--amber);
+    font-weight: 600;
+}
+
+.clear-search {
+    margin: 0 0 0 12px;
 }

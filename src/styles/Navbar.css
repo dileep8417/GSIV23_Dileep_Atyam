@@ -3,13 +3,24 @@ nav {
     padding: 12px 16px;
     box-shadow: 0 3px 3px var(--light-gray);
     justify-content: space-between;
+    align-items: center;
     margin: 0 0 16px;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    background-color: white;
 }
 
 nav .nav-icon {
     font-size: 28px;
+    color: var(--gray);
 }
 
 nav .nav-icon:active {
     color: inherit;
+}
+
+nav .nav-heading {
+    color: var(--gray);
+    font-size: 24px;
 }
