@@ -3,10 +3,12 @@
   "version": "1.0.0",
   "description": "A PWA React application for browsing movies",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "webpack serve --mode development",
+    "build": "webpack",
+    "test": "jest"
   },
   "keywords": [],
-  "author": "",
+  "author": "Dileep Atyam",
   "license": "ISC",
   "devDependencies": {
     "@babel/core": "^7.22.10",
