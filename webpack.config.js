@@ -1,5 +1,6 @@
 const path = require('path');
 const HtmlPlugin = require('html-webpack-plugin');
+const Dotenv = require('dotenv-webpack');
 
 const config = {
     entry: {
@@ -37,6 +38,7 @@ const config = {
         new HtmlPlugin({
             template: path.resolve('public/index.html'),
         }),
+        new Dotenv(),
     ],
 };
 
