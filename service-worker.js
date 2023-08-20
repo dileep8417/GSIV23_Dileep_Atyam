@@ -5,7 +5,7 @@ const filesToCache = [
     '/',
     'index.html',
     'index.js',
-    'vendors-node_modules_react-dom_client_js-node_modules_webpack-dev-server_client_index_js_prot-485449.js' // for dev purpose
+    'vendors-node_modules_css-loader_dist_runtime_api_js-node_modules_css-loader_dist_runtime_sour-876625.js'
 ];
 
 // install
@@ -19,11 +19,14 @@ function installSW(event) {
         caches.keys()
             // remove existing caches
             .then(cacheNames => {
-                cacheNames.forEach(cacheName => cacheName !== currentCache && caches.delete(cacheName));
+                return Promise.all(
+                    cacheNames.filter(cacheName => cacheName !== currentCache)
+                    .map(cacheName => caches.delete(cacheName))
+                );
             }).then(() => {
                 // cache files
-                caches.open(currentCache).then(cache => cache.addAll(filesToCache));
-            })
+                return caches.open(currentCache).then(cache => cache.addAll(filesToCache));
+            }).catch(e => console.log(e))
     );
 }
 

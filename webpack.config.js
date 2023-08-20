@@ -1,6 +1,7 @@
 const path = require('path');
 const HtmlPlugin = require('html-webpack-plugin');
 const Dotenv = require('dotenv-webpack');
+const Copy = require('copy-webpack-plugin');
 
 const config = {
     entry: {
@@ -11,8 +12,9 @@ const config = {
         filename: '[name].js',
         chunkFilename: 'chunk.[contentHash].[ext]',
         clean: true,
-        publicPath: '/',
+        publicPath: path.resolve('dist'),
     },
+    devtool: 'source-map',
     devServer: {
         open: true,
         hot: true,
@@ -45,6 +47,12 @@ const config = {
             template: path.resolve('public/index.html'),
         }),
         new Dotenv(),
+        new Copy({
+            patterns: [{
+                from: 'service-worker.js',
+                to: ''
+            }],
+        }),
     ],
 };
 
