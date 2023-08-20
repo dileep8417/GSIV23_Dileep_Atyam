@@ -1,6 +1,7 @@
 import React from "react";
 import { createRoot } from 'react-dom/client'
 import App from "./App";
+import { registerServiceWorker } from './serviceWorkerRegister';
 
 const rootDom = document.getElementById('movie-browser');
 
@@ -11,3 +12,5 @@ root.render(
         <App />
     </React.StrictMode>
 );
+
+registerServiceWorker();
