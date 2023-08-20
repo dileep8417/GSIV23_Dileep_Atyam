@@ -2,6 +2,7 @@ const path = require('path');
 const HtmlPlugin = require('html-webpack-plugin');
 const Dotenv = require('dotenv-webpack');
 const Copy = require('copy-webpack-plugin');
+const MiniCssPlugin = require('mini-css-extract-plugin'); 
 
 const config = {
     entry: {
@@ -33,8 +34,8 @@ const config = {
                 use: 'babel-loader'
             },
             {
-                test: /.css$/,
-                use: ['style-loader', 'css-loader'],
+                test: /\.css$/,
+                use: [MiniCssPlugin.loader, 'css-loader'],
             },
             {
                 test: /\.(png|jpe?g|gif|svg)$/i,
@@ -57,6 +58,7 @@ const config = {
         new HtmlPlugin({
             template: path.resolve('public/index.html'),
         }),
+        new MiniCssPlugin(),
         new Dotenv(),
         new Copy({
             patterns: [{
