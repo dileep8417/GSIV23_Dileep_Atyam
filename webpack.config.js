@@ -11,11 +11,13 @@ const config = {
         filename: '[name].js',
         chunkFilename: 'chunk.[contentHash].[ext]',
         clean: true,
+        publicPath: '/',
     },
     devServer: {
         open: true,
         hot: true,
-        port: 3000
+        port: 3000,
+        historyApiFallback: true,
     },
     optimization: {
         splitChunks: {
