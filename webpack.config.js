@@ -21,11 +21,6 @@ const config = {
         port: 3000,
         historyApiFallback: true,
     },
-    optimization: {
-        splitChunks: {
-            chunks: 'all',
-        }
-    },
     module: {
         rules: [
             {
