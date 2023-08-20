@@ -1,0 +1,22 @@
+.search-field {
+    position: relative;
+    width: 100%;
+    max-width: 380px;
+}
+
+.search-field input {
+    border: none;
+    border-radius: 6px;
+    padding: 8px 8px 8px 36px;
+    width: 100%;
+    background-color: var(--disabled);
+    outline: none;
+}
+
+.search-field .search-icon {
+    position: absolute;
+    font-size: 21px;
+    left: 8px;
+    top: 6px;
+    color: var(--light-gray);
+}

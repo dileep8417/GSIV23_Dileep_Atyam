@@ -4,7 +4,7 @@ import Details from "./pages/Details";
 
 const App = () => {
     return (
-        <BrowserRouter>
+        <BrowserRouter basename='/'>
             <Routes>
                 <Route path='/' element={<Home />} />
 
