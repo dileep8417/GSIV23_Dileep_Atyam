@@ -25,14 +25,15 @@
 
 .search-info-container {
     margin: 24px auto;
-    font-size: 18px;
+    font-size: 24px;
 }
 
 .search-info-container span {
-    color: var(--amber);
+    color: var(--red);
     font-weight: 600;
 }
 
 .clear-search {
     margin: 0 0 0 12px;
+    padding: 4px
 }

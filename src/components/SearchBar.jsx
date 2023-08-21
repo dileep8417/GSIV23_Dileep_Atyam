@@ -12,12 +12,13 @@ const SearchBar = () => {
         dispatch(resetResults());
         dispatch(setSearchTerm(searchRef.current.value));
         dispatch(fetchMoviesList());
+        searchRef.current.value = '';
     }
 
     return (
         <div className="search-field">
             <MdSearch className='search-icon' onClick={searchClickHandler} />
-            <input ref={searchRef} type="text" placeholder="Search" />
+            <input ref={searchRef} type="text" placeholder="Search" onKeyDown={(e) => e.keyCode === 13 ? searchClickHandler() : ''} />
         </div>
     );
 }

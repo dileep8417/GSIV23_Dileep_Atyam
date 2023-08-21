@@ -9,6 +9,8 @@ nav {
     top: 0;
     z-index: 10;
     background-color: white;
+    height: 66px;
+    gap: 24px;
 }
 
 nav .nav-icon {

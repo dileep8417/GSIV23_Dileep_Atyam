@@ -15,7 +15,7 @@ const MoviesList = () => {
     const loadMovies = debounce(() => {
         dispatch(updatePageNumber());
         dispatch(fetchMoviesList());
-    }, 600);
+    }, 300);
 
     useEffect(() => {
         loadMovies();

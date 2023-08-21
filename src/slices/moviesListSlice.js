@@ -1,9 +1,10 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 import axios from "axios";
 import { movieDiscoverUrl, movieSearchUrl } from "../constants/urls";
+import { sampleAccessToken } from "../constants/sampleCredentials";
 
 const initialState = {
-    isLoading: false,
+    isLoading: true,
     movies: [],
     isOffline: false,
     errorMsg: null,
@@ -26,7 +27,7 @@ export const fetchMoviesList = createAsyncThunk('moviesList/fetchMovies', async 
         return Promise.reject();
     }
 
-    const accessToken = process.env.ACCESS_TOKEN || 'eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI5MTk2YTdiYzU3Y2U3NDIyYTljZjdmOTU3NDliYWZiMyIsInN1YiI6IjY0ZTFhYjE2ZTE5ZGU5MDBjNjhjMGU3ZiIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.RTNWRNYOGqUBIe0AIZvGQcRyjL9pHubRD-eE5Sj6kjQ';
+    const accessToken = process.env.ACCESS_TOKEN || sampleAccessToken;
     if (!accessToken) {
         return Promise.reject();
     }
