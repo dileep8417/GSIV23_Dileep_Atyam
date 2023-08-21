@@ -66,6 +66,9 @@ const moviesListSlice = createSlice({
             state.searchTerm = action.payload;
             state.isAllResultsLoaded = false;
         },
+        setIsOffline: (state, action) => {
+            state.isOffline = action.payload;
+        }
     },
     extraReducers: (builder) => {
         builder.addCase(fetchMoviesList.pending, (state) => {
@@ -89,4 +92,4 @@ const moviesListSlice = createSlice({
 
 export const moviesListReducer = moviesListSlice.reducer;
 
-export const { updatePageNumber, setSearchTerm, resetResults } = moviesListSlice.actions;
+export const { updatePageNumber, setSearchTerm, resetResults, setIsOffline } = moviesListSlice.actions;

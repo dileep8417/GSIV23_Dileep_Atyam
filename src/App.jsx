@@ -5,6 +5,7 @@ import Details from "./pages/Details";
 const App = () => {
     return (
         <BrowserRouter basename='/'>
+            {}
             <Routes>
                 <Route path='/' element={<Home />} />
 

@@ -1,5 +1,6 @@
 import Layout from "../components/Layout";
 import MovieDetails from "../components/MovieDetails";
+import withOfflineEnabled from "../hoc/withOfflineEnabled";
 
 const Details = () => {
     return (
@@ -9,4 +10,4 @@ const Details = () => {
     );
 }
 
-export default Details;
+export default withOfflineEnabled(Details);

@@ -3,9 +3,9 @@ const version = 'v1';
 const currentCache = cacheName + '-' + version;
 const filesToCache = [
     '/',
-    'index.html',
     'index.js',
-    'index.css'
+    'index.css',
+    'offline.png'
 ];
 
 // install

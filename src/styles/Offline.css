@@ -1,0 +1,22 @@
+.offline {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.offline img {
+    width: 240px;
+}
+
+.retry {
+    text-decoration: none;
+    background-color: var(--orange);
+    padding: 9px;
+    width: 140px;
+    text-align: center;
+    border-radius: 6px;
+    margin: 12px 0 0;
+    color: var(--disabled);
+    font-weight: 500;
+}

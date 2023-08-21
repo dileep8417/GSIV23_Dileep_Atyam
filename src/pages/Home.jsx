@@ -1,5 +1,6 @@
 import Layout from "../components/Layout";
 import MoviesList from "../components/MoviesList";
+import withOfflineEnabled from "../hoc/withOfflineEnabled";
 
 const Home = () => {
     return (
@@ -9,4 +10,4 @@ const Home = () => {
     );
 }
 
-export default Home;
+export default withOfflineEnabled(Home);
