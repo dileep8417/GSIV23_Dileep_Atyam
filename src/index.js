@@ -15,4 +15,4 @@ root.render(
     </Provider>
 );
 
-// registerServiceWorker();
+registerServiceWorker();
