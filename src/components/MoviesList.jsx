@@ -12,10 +12,11 @@ const MoviesList = () => {
     const dispatch = useDispatch();
     const moviesListRef = useRef();
 
+    const debounceDelay = 500;
     const loadMovies = debounce(() => {
         dispatch(updatePageNumber());
         dispatch(fetchMoviesList());
-    }, 300);
+    }, debounceDelay);
 
     useEffect(() => {
         loadMovies();
