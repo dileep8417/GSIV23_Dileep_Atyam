@@ -2,7 +2,7 @@ const path = require('path');
 const HtmlPlugin = require('html-webpack-plugin');
 const Dotenv = require('dotenv-webpack');
 const Copy = require('copy-webpack-plugin');
-const MiniCssPlugin = require('mini-css-extract-plugin'); 
+const MiniCssPlugin = require('mini-css-extract-plugin');
 
 const config = {
     entry: {
@@ -35,15 +35,15 @@ const config = {
             {
                 test: /\.(png|jpe?g|gif|svg)$/i,
                 use: [
-                  {
-                    loader: 'url-loader',
-                    options: {
-                      limit: 8192,
-                      name: 'assets/images/[name].[hash].[ext]',
+                    {
+                        loader: 'url-loader',
+                        options: {
+                            limit: 8192,
+                            name: 'assets/images/[name].[hash].[ext]',
+                        },
                     },
-                  },
                 ],
-              },
+            },
         ],
     },
     resolve: {
@@ -56,10 +56,16 @@ const config = {
         new MiniCssPlugin(),
         new Dotenv(),
         new Copy({
-            patterns: [{
-                from: 'service-worker.js',
-                to: ''
-            }],
+            patterns: [
+                {
+                    from: 'service-worker.js',
+                    to: ''
+                },
+                {
+                    from: 'public/offline.png',
+                    to: ''
+                },
+            ],
         }),
     ],
 };
