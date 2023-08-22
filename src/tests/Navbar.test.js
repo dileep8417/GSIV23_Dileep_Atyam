@@ -2,13 +2,17 @@ import '@testing-library/jest-dom';
 import { render, screen } from '@testing-library/react';
 import Navbar from '../components/Navbar';
 import { MemoryRouter } from 'react-router-dom';
+import { Provider } from 'react-redux';
+import store from '../store/store';
 
 describe('Navbar', () => {
 
     const renderedNavbar = () => render(
-        <MemoryRouter>
-            <Navbar />
-        </MemoryRouter>
+        <Provider store={store}>
+            <MemoryRouter>
+                <Navbar />
+            </MemoryRouter>
+        </Provider>
     );
 
     test('is navbar rendered', () => {
